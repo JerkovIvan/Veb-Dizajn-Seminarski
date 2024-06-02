@@ -1,0 +1,345 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* navigacija */
+.NavigacioniBar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.NavigacioniMeni {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.VelicinaNavigacije {
+    font-size: 4.5rem;
+}
+
+.VelicinaNavigacije img {
+    height: 50px;
+}
+
+.NavigacioniLink {
+    transition: 0.3s ease;
+}
+
+.NavigacioniLink:hover {
+    color: blue;
+}
+
+.HamburgerMeni {
+    display: none;
+    cursor: pointer;
+    z-index: 9999;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: black;
+}
+@media(max-width:768px) {
+    .HamburgerMeni {
+        display: block;
+    }
+    .HamburgerMeni.aktiviraj .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .HamburgerMeni.aktiviraj .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .HamburgerMeni.aktiviraj .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .NavigacioniMeni {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 999;
+    }
+    .NavigacioniPredmet {
+        margin: 16px 0;
+    }
+    .NavigacioniMeni.aktiviraj {
+        left: 0;
+    }
+}
+
+.slika-kontejner {
+    margin-top: 70px;
+}
+
+/* dobrodoslica */
+.slika-kontejner {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-image: url('pozadina.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.preklapanje-teksta {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    opacity: 0; /* Početna neprozirnost */
+    animation: fadeIn 3s forwards; /* Animacija fade-in */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Završna neprozirnost */
+    }
+}
+
+.preklapanje-teksta h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.preklapanje-teksta p {
+    font-size: 1.5em;
+}
+
+/* deo o nama */
+.o-nama {
+    padding: 100px;
+}
+
+.kontejner1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.sekcija-slike2 img {
+    max-width: 100%;
+    height: auto;
+}
+
+.sadrzaj-sekcije2 h2 {
+    font-size: 35px;
+    margin-bottom: 20px;
+}
+
+.sadrzaj-sekcije2 p {
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.sadrzaj-sekcije2 .dugmence2 {
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 17px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: 0.4s ease;
+}
+
+.sadrzaj-sekcije2 .dugmence2:hover {
+    background-color: grey;
+}
+
+/* galerija */
+.PoktretnaGalerija {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+}
+
+.prelazak {
+    display: none;
+}
+
+.prelazak img {
+    width: 100%;
+    height: auto;
+}
+
+.prethodna, .sledeca {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.prethodna {
+    left: 0;
+}
+
+.sledeca {
+    right: 0;
+}
+
+/* footer */
+.podnozje {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.levo-podnozje a {
+    display: block; /* Postavlja linkove da se prikažu kao blokovi */
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px; /* Dodaje razmak između linkova */
+}
+
+.levo-podnozje a:hover {
+    color: blue;
+}
+
+.desno-podnozje img {
+    max-width: 100px;
+    height: auto;
+}
+
+.levo-podnozje {
+    margin-left: 10px; /* Pomeranje linkova za 3 piksela od leve ivice ekrana */
+    text-align: left; /* Poravnavanje linkova u ravni */
+}
+
+.desno-podnozje {
+    margin-right: 10px; /* Pomeranje slike za 3 piksela od desne ivice ekrana */
+}
+
+
+/* Stilovi za vrlo male uređaje (max-width: 800px) */
+@media only screen and (max-width: 800px) {
+    .NavigacioniLink {
+        font-size: 14px;
+    }
+    .preklapanje-teksta h1,
+    .preklapanje-teksta p { 
+        font-size: 14px;
+    }
+    .sadrzaj-sekcije2 h2,
+    .sadrzaj-sekcije2 p {
+        font-size: 14px;
+    }
+    .podnozje a {
+        font-size: 12px;
+    }
+    .podnozje p {
+        font-size: 12px;
+    }
+    .PoktretnaGalerija {
+        width: 60%;
+        margin: 5px;
+    }
+    .PoktretnaGalerija img {
+        width: 100%;
+        height: auto;
+    }
+    .PoktretnaGalerija .prethodna, 
+    .PoktretnaGalerija .sledeca {
+        font-size: 12px;
+        padding: 8px;
+    }
+    .sekcija-slike2 img {
+        width: 60%;
+        height: auto;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .NavigacioniLink {
+        font-size: 16px;
+    }
+    .preklapanje-teksta h1,
+    .preklapanje-teksta p { 
+        font-size: 16px;
+    }
+    .sadrzaj-sekcije2 h2,
+    .sadrzaj-sekcije2 p {
+        font-size: 16px;
+    }
+    .podnozje a {
+        font-size: 14px;
+    }
+    .podnozje p {
+        font-size: 14px;
+    }
+    .PoktretnaGalerija {
+        max-width: 70%;
+        margin: 9px;
+    }
+    .PoktretnaGalerija img {
+        width: 100%;
+        height: auto;
+    }
+    .PoktretnaGalerija .prethodna, 
+    .PoktretnaGalerija .sledeca {
+        font-size: 14px;
+        padding: 12px;
+    }
+    .sekcija-slike2 img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+
+
+
+/* Sjajni efekat na naslov */
+.sadrzaj-sekcije2 h2.efekatTeskta {
+    text-shadow: 0 0 10px rgba(0, 0, 255, 0.7); /* Plavkasti sjaj */
+}
+
+
+/* Sjajni efekat na sliku */
+.sekcija-slike2 img.efekatSlike {
+    box-shadow: 0 0 50px rgba(255, 0, 21, 0.76); /* Plavkasti sjaj */
+}
+
+
+

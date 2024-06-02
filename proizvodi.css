@@ -1,0 +1,280 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* navigacija */
+.NavigacioniBar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.NavigacioniMeni {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.VelicinaNavigacije {
+    font-size: 4.5rem;
+}
+
+.VelicinaNavigacije img {
+    height: 50px;
+}
+
+.NavigacioniLink {
+    transition: 0.3s ease;
+}
+
+.NavigacioniLink:hover {
+    color: blue;
+}
+
+.HamburgerMeni {
+    display: none;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: black;
+}
+
+@media(max-width:768px) {
+    .HamburgerMeni {
+        display: block;
+    }
+
+    .HamburgerMeni.aktiviraj .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .HamburgerMeni.aktiviraj .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .HamburgerMeni.aktiviraj .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .NavigacioniMeni {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    .NavigacioniPredmet {
+        margin: 16px 0;
+    }
+
+    .NavigacioniMeni.aktiviraj {
+        left: 0;
+    }
+}
+
+
+
+
+
+
+
+.KontejenrProizvodi {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.predmet {
+    margin: 10px;
+    text-align: center;
+    border: 2px solid #ccc;
+    padding: 10px;
+}
+button {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.kupi-dugme:hover {
+    background-color: #555; /* Nova boja kada se pređe mišem preko dugmeta */
+}
+
+.UspesnaPoruka {
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    border-radius: 8px;
+    display: none;
+}
+/* footer */
+.podnozje {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.levo-podnozje a {
+    display: block; /* Postavlja linkove da se prikažu kao blokovi */
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px; /* Dodaje razmak između linkova */
+    
+}
+
+.levo-podnozje a:hover {
+    color: blue;
+}
+
+.desno-podnozje img {
+    max-width: 100px;
+    height: auto;
+}
+
+.levo-podnozje {
+    margin-left: 10px; /* Pomeranje linkova za 3 piksela od leve ivice ekrana */
+    text-align: left; /* Poravnavanje linkova u ravni */
+}
+
+.desno-podnozje {
+    margin-right: 10px; /* Pomeranje slike za 3 piksela od desne ivice ekrana */
+}
+
+/* Fleksibilna tipografija */
+@media only screen and (max-width: 600px) {
+    .NavigacioniLink {
+        font-size: 12px; /* Smanjivanje veličine linkova u navigaciji */
+    }
+
+    .KontejenrProizvodi {
+        grid-template-columns: repeat(1, 1fr); /* Postavljanje jednog predmeta u jednom redu */
+    }
+
+    .predmet {
+        width: 100%; /* Postavljanje širine predmeta na 100% */
+    }
+
+    .predmet img {
+        width: 100%; /* Postavljanje širine slika predmeta na 100% */
+    }
+
+    .predmet p {
+        font-size: 14px; /* Smanjivanje veličine teksta opisa proizvoda */
+    }
+
+    .kupi-dugme {
+        font-size: 12px; /* Smanjivanje veličine fonta na dugmetu "Kupi" */
+        padding: 5px 10px; /* Smanjivanje padding-a na dugmetu "Kupi" */
+
+    }
+    .NavigacioniLink {
+        font-size: 16px;
+     }
+     .podnozje a {
+        font-size: 16px;
+    }
+
+    .podnozje p {
+        font-size: 16px;
+    }
+
+    .desno-podnozje img {
+        max-width: 90px;
+    }
+    
+}
+
+@media only screen and (max-width: 900px) {
+    .NavigacioniLink {
+        font-size: 14px; /* Povećanje veličine linkova u navigaciji */
+    }
+
+    .KontejenrProizvodi {
+        grid-template-columns: repeat(2, 1fr); /* Postavljanje dva predmeta u jednom redu */
+    }
+
+    .predmet {
+        width: 48%; /* Smanjivanje širine predmeta na 48% */
+    }
+
+    .predmet img {
+        width: 100%; /* Postavljanje širine slika predmeta na 100% */
+    }
+
+    .predmet p {
+        font-size: 16px; /* Povećanje veličine teksta opisa proizvoda */
+    }
+
+    .kupi-dugme {
+        font-size: 14px; /* Povećanje veličine fonta na dugmetu "Kupi" */
+        padding: 8px 12px; /* Povećanje padding-a na dugmetu "Kupi" */
+    }
+    .podnozje a {
+        font-size: 14px;
+    }
+
+    .podnozje p {
+        font-size: 14px;
+    }
+
+    .desno-podnozje img {
+        max-width: 80px;
+    }
+
+    .NavigacioniLink {
+        font-size: 16px;
+    }
+}
+
+  

@@ -1,0 +1,272 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* navigacija */
+.NavigacioniBar {
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.NavigacioniMeni {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.VelicinaNavigacije {
+    font-size: 4.5rem;
+}
+
+.VelicinaNavigacije img {
+    height: 50px;
+}
+
+.NavigacioniLink {
+    transition: 0.3s ease;
+}
+
+.NavigacioniLink:hover {
+    color: blue;
+}
+
+.HamburgerMeni {
+    display: none;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: black;
+}
+
+@media(max-width:768px) {
+    .HamburgerMeni {
+        display: block;
+    }
+
+    .HamburgerMeni.aktiviraj .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .HamburgerMeni.aktiviraj .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .HamburgerMeni.aktiviraj .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .NavigacioniMeni {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 999;
+    }
+
+    .NavigacioniPredmet {
+        margin: 16px 0;
+    }
+
+    .NavigacioniMeni.aktiviraj {
+        left: 0;
+    }
+}
+
+
+
+
+
+
+#kontakt-detalji{
+    display: flex;
+}
+#kontakt-detalji .detalji span{
+    font-size: 30px;
+    font-weight: 600;
+}
+#kontakt-detalji .detalji p{
+    text-align: left;
+    font-size: 25px;
+    margin-top: 30px;
+}
+#kontakt-detalji .forma-detalji form{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+#kontakt-detalji .forma-detalji form input{
+    width: 100%;
+    padding: 12px 15px;
+    outline: none;
+    margin-bottom: 20px;
+    border: 1px solid #e1e1e1;
+}
+#kontakt-detalji .forma-detalji form textarea{
+    outline: none;
+    padding: 12px;
+    border: 1px solid #e1e1e1;
+}
+
+
+  /* footer */
+.podnozje {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.levo-podnozje a {
+    display: block; /* Postavlja linkove da se prikažu kao blokovi */
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px; /* Dodaje razmak između linkova */
+    
+}
+
+.levo-podnozje a:hover {
+    color: blue;
+}
+
+.desno-podnozje img {
+    max-width: 100px;
+    height: auto;
+}
+
+.levo-podnozje {
+    margin-left: 10px; /* Pomeranje linkova za 3 piksela od leve ivice ekrana */
+    text-align: left; /* Poravnavanje linkova u ravni */
+}
+
+.desno-podnozje {
+    margin-right: 10px; /* Pomeranje slike za 3 piksela od desne ivice ekrana */
+}
+
+.centralno {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh; /* Visina zauzima celu visinu viewport-a */
+}
+
+/* Fleksibilna tipografija */
+@media only screen and (max-width: 800px) {
+    .NavigacioniLink {
+        font-size: 12px; /* Promena veličine linkova u navigaciji */
+    }
+
+    #kontakt-detalji {
+        padding: 20px; /* Povećanje razmaka unutar sekcije za kontakt */
+    }
+
+    .detalji span {
+        font-size: 12px !important; /* Manja veličina fonta za naslov */
+    }
+
+    .detalji p {
+        font-size: 14px !important; /* Manja veličina fonta za paragraf */
+    }
+
+    #kontakt-forma input,
+    #kontakt-forma textarea,
+    #kontakt-forma button {
+        margin-bottom: 10px; /* Povećanje razmaka između inputa, textarea i dugmeta za kontakt */
+    }
+    .podnozje a {
+        font-size: 16px;
+    }
+
+    .podnozje p {
+        font-size: 16px;
+    }
+
+    .desno-podnozje img {
+        max-width: 90px;
+    }
+    .NavigacioniLink {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .NavigacioniLink {
+        font-size: 14px; 
+    }
+
+    #kontakt-detalji {
+        padding: 25px; 
+    }
+
+    .detalji span {
+        font-size: 14px !important;
+    }
+
+    .detalji p {
+        font-size: 16px !important; 
+    }
+
+    #kontakt-forma input,
+    #kontakt-forma textarea,
+    #kontakt-forma button {
+        margin-bottom: 15px;
+    }
+    .NavigacioniLink {
+        font-size: 14px;
+    }
+    .podnozje a {
+        font-size: 14px;
+    }
+
+    .podnozje p {
+        font-size: 14px;
+    }
+
+    .desno-podnozje img {
+        max-width: 80px;
+    }
+}
+
+.podnozje{
+    margin-top: 350px;
+}
+
+.detalji{
+    margin-top: 250px;
+}
